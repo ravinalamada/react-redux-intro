@@ -1,5 +1,17 @@
-import redux, { createStore } from 'redux';
+import redux, { combineReducers, createStore } from 'redux';
+import countReducer from './count';
 
+const rootReducer = combineReducers({
+  count:countReducer,
+})
+
+const store = createStore(rootReducer)
+
+store.subscribe(() => {
+    console.log(store.getState())
+})
+
+export default store;
 /**
  * Challenge: set up redux action creators, reducer, and store
  * We'll be building a counter app to start out.

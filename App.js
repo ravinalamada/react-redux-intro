@@ -1,7 +1,11 @@
 import React from 'react';
+import store from './redux';
+import {increment, decrement} from './redux/count';
 
 function App(props) {
-	return <div></div>;
+  store.dispatch(increment(3))
+  store.dispatch(decrement(2))
+	return <div>Cool</div>;
 }
 
 export default App;
